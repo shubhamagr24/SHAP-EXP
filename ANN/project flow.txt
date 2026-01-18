@@ -1,0 +1,88 @@
+
+1. Load Data from Kaggle
+2. Peform EDA
+    check Fillrate (df.isna().sum()/len(df))
+    check duplicated
+    check target 
+    remove irrelevant cols
+    Sep Num & Categorical Cols
+    NUM
+        Histogram
+        box plot
+        violin plot
+    Cate
+        nunique()
+        unique()
+        Distribution
+
+3. Load Lib
+
+3. Train Test Spit
+3. Feature Eng
+    NUM
+        Scaling
+        Outlier
+        Missing Value Imputation
+    cate
+        Onehot encode
+        ordinal encode
+    Creating Preporcissing pipelines
+    
+
+
+
+    ------------
+
+
+
+
+
+create datasets
+create dataloader
+define Netwrok
+    seq(nnlinear,batchnorm1d,relu X 3)
+
+create objects for datasets /dataloader/ model
+
+Define loss fun
+select optimizer
+    deine optimizer with model weights
+set lr and epoch
+
+batch_size=len(dataloader)
+
+Trainig loop
+
+for each epoch
+    for each batch in train data loader
+
+        predict model o/p
+
+        cal loss
+
+        optimizsr.zerograd
+
+        loss.backward
+
+        optimizer.step()
+
+        batch_loss_train+=batch_loss_train
+
+    for each batch in test data loader
+        model.eval()
+
+        with.torch.nograd()
+
+        predit model o/p for test data
+
+        cal test loss
+
+        batch_loss_test+=batch_loss_test
+    
+    train epoc loss=batch_loss_train/batch_size
+    test epoc loss=batch_loss_test/batch_size
+
+
+makr final pred for both test and train (make usre to use dataloader woth shuffle=false)
+
+sent final pred to clasfifcation report wiht actual lables to get final accuravy
