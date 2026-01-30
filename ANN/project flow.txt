@@ -86,3 +86,40 @@ for each epoch
 makr final pred for both test and train (make usre to use dataloader woth shuffle=false)
 
 sent final pred to clasfifcation report wiht actual lables to get final accuravy
+
+
+import shap
+
+create backgound data
+    Sample train data to get Background  data
+    Generally taking ~500 samples is enough
+    Convert data to tensor for pytorch model 
+
+Define Explainer
+    Use deep Explainer from shap Lib
+    give the sample data
+
+Create Sample data for Shap value calculation
+    sample 100-500 test data
+    convert to tensor
+
+Calculate Shap Values using the explainer define above
+    pass sample data to explainer
+
+Create an shap explanation using the sahp values 
+    Provde feature name for col identification
+    use same shap_values as calcuted above
+    provide base values(Expected Values)
+
+Create global plots
+    pass full shap values (exclude additional dimnetion added by torch o/p)
+    use shap.plots.bar
+    use shap.plots.beeswarn
+
+Create Local plots  
+    pass single explanation using row indexing on shap values
+    use shap.plot.waterfallm
+    
+
+
+
